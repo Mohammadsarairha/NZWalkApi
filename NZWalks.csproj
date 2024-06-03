@@ -35,4 +35,7 @@
     <Folder Include="Data\" />
     <Folder Include="Models\DTO\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="appsettings.Development.json" />
+  </ItemGroup>
 </Project>
