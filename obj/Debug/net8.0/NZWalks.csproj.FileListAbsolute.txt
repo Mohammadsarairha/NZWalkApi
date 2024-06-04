@@ -135,3 +135,4 @@
 /Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/mohammadsarairha/Projects/NZWalks/obj/Debug/net8.0/NZWalks.sourcelink.json
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/AutoMapper.dll

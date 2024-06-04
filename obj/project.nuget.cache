@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Eb2h5TkcFkCIdpB7a7I7KN1hGrTQlSXFnIu4Bkk/pQNwx9+J+S/Fp53z4V6wbXrM7uIb2OZBU7XA8NdpXLgKdg==",
+  "dgSpecHash": "Vc2PJYJ14mwxZ+kz44KJ9PeC2I0wNACFsGyl6Rd0mlPSXBYit6Emp/HnO0U8SuXNpocDK/dcwvv+qRcvnD815g==",
   "success": true,
   "projectFilePath": "/Users/mohammadsarairha/Projects/NZWalks/NZWalks.csproj",
   "expectedPackageFiles": [
+    "/Users/mohammadsarairha/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/mohammadsarairha/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/mohammadsarairha/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
     "/Users/mohammadsarairha/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
