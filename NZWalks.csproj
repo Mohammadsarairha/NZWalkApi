@@ -43,4 +43,7 @@
   <ItemGroup>
     <Content Remove="appsettings.Development.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20240604040509_SeedData.Designer.cs" />
+  </ItemGroup>
 </Project>
