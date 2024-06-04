@@ -73,13 +73,21 @@ namespace NZWalks.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddRegionRequestDto addRegionRequest)
         {
-            var region = mapper.Map<Region>(addRegionRequest);
+            if (ModelState.IsValid)
+            {
+                var region = mapper.Map<Region>(addRegionRequest);
 
-            await regionRepository.Create(region);
+                await regionRepository.Create(region);
 
-            var regionDto = mapper.Map<RegionDto>(region);
+                var regionDto = mapper.Map<RegionDto>(region);
 
-            return CreatedAtAction(nameof(GetById), new { id = regionDto.Id }, regionDto);
+                return CreatedAtAction(nameof(GetById), new { id = regionDto.Id }, regionDto);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+
         }
 
         [HttpPut]
@@ -87,13 +95,21 @@ namespace NZWalks.Controllers
         // id in Route should be same in function parameter to can map to it
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequest)
         {
-            var dominRegion = mapper.Map<Region>(updateRegionRequest);
-            var region = await regionRepository.Update(id, dominRegion);
+            if (ModelState.IsValid)
+            {
+                var dominRegion = mapper.Map<Region>(updateRegionRequest);
+                var region = await regionRepository.Update(id, dominRegion);
 
-            if (region == null)
-                return NotFound();
+                if (region == null)
+                    return NotFound();
 
-            return Ok(mapper.Map<RegionDto>(region));
+                return Ok(mapper.Map<RegionDto>(region));
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+
         }
 
         [HttpDelete]
