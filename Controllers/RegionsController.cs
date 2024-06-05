@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -21,16 +22,21 @@ namespace NZWalks.Controllers
     {
         private readonly IRegionRepository regionRepository;
         private readonly IMapper mapper;
-        public RegionsController(IRegionRepository regionRepository, IMapper mapper)
+        private readonly ILogger logger;
+
+        public RegionsController(IRegionRepository regionRepository, IMapper mapper, ILogger logger)
         {
             this.regionRepository = regionRepository;
             this.mapper = mapper;
+            this.logger = logger;
         }
 
         [HttpGet]
         [Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetAll()
         {
+            logger.LogInformation("GetAllRegions Action Method");
+
             var regions = await regionRepository.GetAllAsync();
 
             var regionsDto = mapper.Map<List<RegionDto>>(regions);
@@ -46,6 +52,8 @@ namespace NZWalks.Controllers
             //        RegionImageUrl = item.RegionImageUrl
             //    });
             //}
+
+            logger.LogInformation($"Finshed GetAllRegions with data : {JsonSerializer.Serialize(regionsDto)}");
             return Ok(regionsDto);
         }
 
