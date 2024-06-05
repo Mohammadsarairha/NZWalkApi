@@ -143,3 +143,12 @@
 /Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
 /Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.AspNetCore.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+/Users/mohammadsarairha/Projects/NZWalks/bin/Debug/net8.0/Serilog.Sinks.File.dll

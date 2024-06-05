@@ -22,20 +22,18 @@ namespace NZWalks.Controllers
     {
         private readonly IRegionRepository regionRepository;
         private readonly IMapper mapper;
-        private readonly ILogger logger;
 
-        public RegionsController(IRegionRepository regionRepository, IMapper mapper, ILogger logger)
+        public RegionsController(IRegionRepository regionRepository, IMapper mapper)
         {
             this.regionRepository = regionRepository;
             this.mapper = mapper;
-            this.logger = logger;
         }
 
         [HttpGet]
-        [Authorize(Roles = "Reader")]
+        //[Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetAll()
         {
-            logger.LogInformation("GetAllRegions Action Method");
+            //logger.LogInformation("GetAllRegions Action Method");
 
             var regions = await regionRepository.GetAllAsync();
 
@@ -53,13 +51,13 @@ namespace NZWalks.Controllers
             //    });
             //}
 
-            logger.LogInformation($"Finshed GetAllRegions with data : {JsonSerializer.Serialize(regionsDto)}");
+            //logger.LogInformation($"Finshed GetAllRegions with data : {JsonSerializer.Serialize(regionsDto)}");
             return Ok(regionsDto);
         }
 
         [HttpGet]
         [Route("{id:Guid}")]
-        [Authorize(Roles = "Reader")]
+        //[Authorize(Roles = "Reader")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             //var region = dbContext.Regions.Find(id);
@@ -82,7 +80,7 @@ namespace NZWalks.Controllers
 
         //Create Region
         [HttpPost]
-        [Authorize(Roles = "Writer")]
+        //[Authorize(Roles = "Writer")]
         public async Task<IActionResult> Create([FromBody] AddRegionRequestDto addRegionRequest)
         {
             if (ModelState.IsValid)
@@ -104,7 +102,7 @@ namespace NZWalks.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        [Authorize(Roles = "Writer")]
+        //[Authorize(Roles = "Writer")]
         // id in Route should be same in function parameter to can map to it
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateRegionRequestDto updateRegionRequest)
         {
@@ -127,7 +125,7 @@ namespace NZWalks.Controllers
 
         [HttpDelete]
         [Route("{id:Guid}")]
-        [Authorize(Roles = "Writer")]
+        //[Authorize(Roles = "Writer")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var region = await regionRepository.Delete(id);
